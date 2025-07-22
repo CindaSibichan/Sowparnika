@@ -2,16 +2,15 @@
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
-# utils.py (below send_contact_email function or separately)
 import gspread
 from google.oauth2.service_account import Credentials
 
 
 def send_contact_email(name, phone, email):
-    subject = 'New Contact Submission'
-    from_email = settings.EMAIL_HOST_USER  # Replace with your verified sending email
-    # to_email = ['hello@infideck.com']
-    to_email = ['cindasibichan2002@gmail.com']
+    subject = 'New Leed'
+    from_email = settings.EMAIL_HOST_USER  
+    to_email = ['hello@infideck.com']
+   
 
     # Plain text (fallback)
     text_content = f"""
@@ -41,7 +40,7 @@ def send_contact_email(name, phone, email):
             <td style="padding: 8px;">{email}</td>
           </tr>
         </table>
-        <p style="margin-top: 20px;">Please follow up with the sender if needed.</p>
+  
       </body>
     </html>
     """
