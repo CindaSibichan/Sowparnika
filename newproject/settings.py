@@ -25,9 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
+GOOGLE_CREDENTIALS_PATH = os.path.join(BASE_DIR, 'newapp', 'credentials', 'sowparnika-001-607ea631f22a.json')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['cindasibichan.pythonanywhere.com']
 ALLOWED_HOSTS = []
 
 

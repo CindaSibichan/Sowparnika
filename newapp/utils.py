@@ -63,9 +63,12 @@ def save_to_google_sheet(name, phone, email):
     ]
 
     # Load credentials from JSON
-    credentials = Credentials.from_service_account_file(
-        'newapp/credentials/sowparnika-001-607ea631f22a.json', scopes=scope
-    )
+    # credentials = Credentials.from_service_account_file(
+    #     'newapp/credentials/sowparnika-001-607ea631f22a.json', scopes=scope
+    # )
+    credentials_path = settings.GOOGLE_CREDENTIALS_PATH  # Loaded from your settings
+
+    credentials = Credentials.from_service_account_file(credentials_path, scopes=scope)
 
     # Authorize and open the sheet
     client = gspread.authorize(credentials)
